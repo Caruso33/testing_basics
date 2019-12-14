@@ -1,19 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toggler Func component should render with default props 1`] = `
-<body>
-  <div>
-    <button
-      class="sc-bdVaJa iTSWAp"
-      data-test="button"
-      on="0"
+exports[`Toggle Button Component on onToggleFunction is called when button is clicked: 1. Before toggle 1`] = `
+<button
+  class="sc-bdVaJa iTSWAp"
+  data-testid="button"
+  on="0"
+>
+  Child
+</button>
+`;
+
+exports[`Toggle Button Component on onToggleFunction is called when button is clicked: 2. After toggle 1`] = `
+<button
+  class="sc-bdVaJa eOWZEI"
+  data-testid="button"
+  on="1"
+>
+  Child
+</button>
+`;
+
+exports[`Toggle Button Component should render with initialToggle true 1`] = `
+<div>
+  <button
+    class="sc-bdVaJa eOWZEI"
+    data-testid="button"
+    on="1"
+  >
+    Child
+  </button>
+</div>
+`;
+
+exports[`Toggler Func Component should render with default props 1`] = `
+<div>
+  <button
+    class="sc-bdVaJa iTSWAp"
+    data-testid="button"
+    on="0"
+  >
+    <span
+      class="sc-bwzfXH gpPPiU"
     >
-      <span
-        class="sc-bwzfXH kabNnl"
-      >
-        Toggle Me
-      </span>
-    </button>
+      Toggle Me
+    </span>
+  </button>
+  <div
+    class="sc-htpNat cdUTde"
+  >
+    0
   </div>
-</body>
+  <input
+    data-testid="input"
+    type="text"
+    value=""
+  />
+</div>
 `;

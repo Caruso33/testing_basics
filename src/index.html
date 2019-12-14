@@ -15,6 +15,17 @@
       crossorigin
       src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
     ></script>
+
+    <!-- https://treesandrobots.com/2019/06/redux-react-without-bundlers-compilers-package-managers-build-system.html -->
+    <script
+      crossorigin
+      src="https://unpkg.com/redux@4.0.4/dist/redux.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-redux@7.1.3/dist/react-redux.js"
+    ></script>
+
     <script
       type="module"
       src="https://unpkg.com/prop-types@15.7.2/prop-types.min.js"
@@ -40,7 +51,7 @@
         moduleId: "main"
       });
     </script>
-    
+
     <script
       type="text/babel"
       src="./index.jsx"
@@ -57,9 +68,7 @@
       import Toggler from "./components/toggler";
 
       ReactDOM.render(
-        <App>
-          <Toggler />
-        </App>,
+        <App>{({ addOne }) => <Toggler addOne={addOne} />}</App>,
         document.getElementById("app")
       );
     </script>

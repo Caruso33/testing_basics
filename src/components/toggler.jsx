@@ -44,7 +44,7 @@ const Toggle = ({ children, initialToggledOn, onToggle }) => {
         handleToggleClick();
         onToggle();
       }}
-      data-test="button"
+      data-testid="button"
     >
       {children}
     </ToggleButton>
@@ -59,21 +59,44 @@ Toggle.propTypes = {
 
 const TogglerText = styled.span`
   font-size: 20px;
+  margin-bottom: 20px;
 `;
 
-const Toggler = () => {
+const CounterText = styled.div`
+  font-size: 20px;
+  margin: 20px;
+`;
+
+const Toggler = ({ addOne }) => {
   const texts = ["Toggle Me", "Toggled"];
   const [text, setText] = React.useState(texts[0]);
+  const [inputText, setinputText] = React.useState("");
 
-  const onToggleText = () => {
-    return text === texts[0] ? texts[1] : texts[0];
-  };
+  const { counter } = ReactRedux.useSelector(state => state);
+  const dispatch = ReactRedux.useDispatch();
 
+  const onToggleText = () => (text === texts[0] ? texts[1] : texts[0]);
   return (
-    <Toggle onToggle={() => setText(onToggleText())}>
-      <TogglerText>{text}</TogglerText>
-    </Toggle>
+    <>
+      <Toggle
+        onToggle={() => {
+          setText(onToggleText());
+          // dispatch(addOne());
+        }}
+      >
+        <TogglerText>{text}</TogglerText>
+      </Toggle>
+
+      <CounterText>{counter}</CounterText>
+
+      <input
+        type="text"
+        value={inputText}
+        onChange={e => setinputText(e.target.value)}
+        data-testid="input"
+      />
+    </>
   );
 };
 
-export default Toggler; // use on test env
+export { Toggler as default, Toggle };
