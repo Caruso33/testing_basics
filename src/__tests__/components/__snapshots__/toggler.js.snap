@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggler Func component should render with default props 1`] = `
+<body>
+  <div>
+    <button
+      class="sc-bdVaJa iTSWAp"
+      data-test="button"
+      on="0"
+    >
+      <span
+        class="sc-bwzfXH kabNnl"
+      >
+        Toggle Me
+      </span>
+    </button>
+  </div>
+</body>
+`;

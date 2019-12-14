@@ -1,4 +1,4 @@
-import sum from "../sum";
+import sum from "../../functions/sum";
 
 describe("Test sum function", () => {
   describe("sums up", () => {
